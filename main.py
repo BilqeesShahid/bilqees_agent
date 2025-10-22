@@ -10,15 +10,27 @@ import google.generativeai as genai
 import numpy as np
 
 # ===== Load environment =====
-load_dotenv()
+# Only load .env locally (not in Railway)
+if not os.getenv("RAILWAY_ENVIRONMENT"):
+    load_dotenv()
+
+# ===== API Keys & Config =====
 HF_API_KEY = os.getenv("HF_API_KEY")
 PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+
+# Optional defaults
 PINECONE_INDEX_NAME = os.getenv("PINECONE_INDEX_NAME", "data-pdf")
 PINECONE_HOST = os.getenv(
     "PINECONE_HOST",
     "https://data-pdf-mbi0n30.svc.aped-4627-b74a.pinecone.io"
 )
+
+# ===== Validate =====
+if not HF_API_KEY or not PINECONE_API_KEY or not GEMINI_API_KEY:
+    print("⚠️ Warning: One or more API keys are missing.")
+else:
+    print("✅ Environment variables loaded successfully.")
 
 
 # Candidate Hugging Face models
