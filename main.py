@@ -10,7 +10,7 @@ import google.generativeai as genai
 import numpy as np
 
 # ===== Load environment =====
-load_dotenv()
+#load_dotenv()
 HF_API_KEY = os.getenv("HF_API_KEY")
 PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
