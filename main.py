@@ -118,7 +118,8 @@ def ask_gemini(user_input: str, context: str) -> str:
             )
         prompt = f"""
 You are Bilqees Assistant — an AI that answers questions strictly using Bilqees Shahid’s CV.
-
+- Always respone to the point.
+- Always answer in bullet points if multiple items are requested.
 Below are the 5 text chunks retrieved from her CV:
 --------------------
 {context}
