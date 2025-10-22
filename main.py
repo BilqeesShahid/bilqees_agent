@@ -129,9 +129,12 @@ User question:
 {user_input}
 
 Instructions:
-- Use only the information from the chunks above to answer.
-- If the CV doesn’t mention something, explicitly say “not mentioned in the CV”.
-- Answer in a clear, warm, and polite tone.
+- Use only the information from the chunks above.
+- Keep the response **brief, factual, and directly relevant** to the user’s question.
+- **Do not repeat** or summarize unrelated parts of the CV.
+- If multiple points are needed, list them in short **bullet points**.
+- If something is **not mentioned**, clearly say “Not mentioned in the CV.”
+- Maintain a professional and polite tone.
 """
         response = model.generate_content(prompt)
         return response.text.strip() if response.text else "⚠️ No response text from Gemini."
