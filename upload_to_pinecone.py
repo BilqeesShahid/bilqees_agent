@@ -8,7 +8,7 @@ from pinecone import Pinecone, ServerlessSpec
 from dotenv import load_dotenv
 
 # Load environment variables
-load_dotenv()
+#load_dotenv()
 
 # CONFIG - put your keys in .env: HF_API_KEY, PINECONE_API_KEY
 HF_API_KEY = os.getenv("HF_API_KEY")
