@@ -8,10 +8,9 @@ from dotenv import load_dotenv
 from pinecone import Pinecone
 import google.generativeai as genai
 import numpy as np
- 
+
 # ===== Load environment =====
-if os.getenv("RAILWAY_ENVIRONMENT") is None:
-    load_dotenv()
+load_dotenv()
 HF_API_KEY = os.getenv("HF_API_KEY")
 PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
@@ -20,6 +19,7 @@ PINECONE_HOST = os.getenv(
     "PINECONE_HOST",
     "https://data-pdf-mbi0n30.svc.aped-4627-b74a.pinecone.io"
 )
+
 
 # Candidate Hugging Face models
 CANDIDATE_MODELS = [
